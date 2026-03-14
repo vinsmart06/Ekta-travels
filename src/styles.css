@@ -282,3 +282,145 @@ input,select,textarea{font-family:'Jost',sans-serif}
 @media(max-width:1100px){.pkg-grid{grid-template-columns:repeat(2,1fr)}.dest-grid{grid-template-columns:repeat(3,1fr)}.dest-tile.large{grid-column:span 2}.themes-grid{grid-template-columns:repeat(3,1fr)}.why-grid{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:1fr 1fr;gap:40px}}
 @media(max-width:900px){.detail-layout,.dest-detail-grid,.about-content{grid-template-columns:1fr}.sidebar-card{position:static}.highlights-grid,.incl-grid{grid-template-columns:1fr}}
 @media(max-width:768px){.container{padding:0 20px}.hero-content{padding:0 24px}.hero-indicators{left:24px}.hero-stats{right:24px;gap:20px}.hero-stat-num{font-size:1.5rem}.search-section{display:none}.dest-grid{grid-template-columns:repeat(2,1fr)}.dest-tile.large{grid-column:span 2}.pkg-grid,.testi-grid{grid-template-columns:1fr}.themes-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr}.form-grid-2,.form-grid-3{grid-template-columns:1fr}.about-stats{grid-template-columns:repeat(2,1fr)}.navbar-inner{padding:0 20px}.nav-links{display:none}}
+
+
+/* ─── HAMBURGER BUTTON ─── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+/* Animate to X when open */
+.hamburger-line.open:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger-line.open:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger-line.open:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── MOBILE MENU ─── */
+.mobile-menu {
+  display: none;
+  background: var(--deep);
+  border-top: 1px solid rgba(201,168,76,.2);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.mobile-menu.open {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+.mobile-menu-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0 24px;
+}
+.mobile-section-title {
+  font-size: .62rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 12px 24px 6px;
+  font-weight: 600;
+}
+.mobile-link {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,.75);
+  font-size: .92rem;
+  text-align: left;
+  padding: 11px 24px;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  transition: color 0.2s, background 0.2s;
+}
+.mobile-link:hover, .mobile-link:active {
+  color: var(--gold);
+  background: rgba(201,168,76,.07);
+}
+.mobile-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,.07);
+  margin: 10px 0;
+}
+.mobile-cta {
+  background: var(--gold);
+  color: var(--deep);
+  border: none;
+  font-family: 'Jost', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  margin: 10px 20px 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: center;
+}
+.mobile-cta:hover { background: var(--gold-light); }
+
+/* ─── SHOW ON MOBILE ─── */
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .mobile-menu { display: block; }
+}
+
+
+/* ─── ENQUIRY PAGE LAYOUT ─── */
+.enquiry-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 44px;
+  align-items: start;
+}
+.enquiry-contact-box {
+  background: var(--deep);
+  padding: 28px;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+}
+.enquiry-why-box {
+  background: #fff;
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+.enquiry-sidebar {}
+
+/* ─── ENQUIRY MOBILE ─── */
+@media (max-width: 768px) {
+  .enquiry-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .form-card {
+    padding: 22px 16px;
+  }
+  .form-grid-2,
+  .form-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .enquiry-contact-box {
+    padding: 20px 16px;
+  }
+  .enquiry-why-box {
+    padding: 18px 16px;
+  }
+}
