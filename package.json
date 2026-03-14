@@ -1,0 +1,16 @@
+{
+  "name": "EKTA-Travels",
+  "version": "1.0.0",
+  "description": "EKTA Travels - India Travel Website",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "esbuild": "^0.27.4",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tsx": "^4.21.0"
+  }
+}
