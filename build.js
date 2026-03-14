@@ -9,7 +9,8 @@ const fs   = require('fs')
 const path = require('path')
 
 //const ESBUILD    = '/home/claude/.npm-global/lib/node_modules/tsx/node_modules/esbuild/bin/esbuild'
-const ESBUILD = 'npx esbuild'
+//const ESBUILD = 'npx esbuild'
+const ESBUILD = "./node_modules/esbuild/bin/esbuild"
 //const NODE_MODS  = '/home/claude/.npm-global/lib/node_modules'
 const ROOT       = __dirname
 
